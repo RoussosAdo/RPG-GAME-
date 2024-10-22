@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  jumpForce: 12
 --- !u!4 &1062402033
 Transform:
   m_ObjectHideFlags: 0
