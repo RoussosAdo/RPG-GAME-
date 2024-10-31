@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState  airState  {get; private set;}
+    public PlayerWallSlideState wallSlide {get; private set;}
     public PlayerDashState dashState {get; private set;}
     #endregion
 
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState  = new PlayerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
+        wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
     }
 
     private void Start()
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         stateMachine.Initialize(idleState);
+
     }
 
 
@@ -98,6 +101,7 @@ public class Player : MonoBehaviour
 
 
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+    public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
 
     private void OnDrawGizmos() 
     {
