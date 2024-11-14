@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -358,17 +370,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skeleton Idle_7: -1053383582
-      Skeleton Idle_3: 626085836
-      Skeleton Idle_5: 1118314133
-      Skeleton Idle_8: -1100961218
-      Skeleton Idle_6: -1154428428
-      Skeleton Idle_2: 448012236
       Skeleton Idle_0: -85727878
-      Skeleton Idle_4: -1476879110
       Skeleton Idle_1: -530656257
-      Skeleton Idle_9: 2102144207
       Skeleton Idle_10: 1113622163
+      Skeleton Idle_2: 448012236
+      Skeleton Idle_3: 626085836
+      Skeleton Idle_4: -1476879110
+      Skeleton Idle_5: 1118314133
+      Skeleton Idle_6: -1154428428
+      Skeleton Idle_7: -1053383582
+      Skeleton Idle_8: -1100961218
+      Skeleton Idle_9: 2102144207
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
