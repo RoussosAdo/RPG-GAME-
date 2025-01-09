@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 687df074731fbf744b668d2275dbb675
+guid: a5f5c2bb9babcf944afcc96b97c5089c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -78,6 +78,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -101,35 +113,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton Idle_0
+      name: Skeleton Idle 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12527eb5558366b44b7793406c27db02
-      internalID: -85727878
+      spriteID: a8fcbbc18b0111e4e8da8868094ab3e9
+      internalID: 1741634140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_1
+      name: Skeleton Idle 1_1
       rect:
         serializedVersion: 2
         x: 24
@@ -164,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e2573cac4cdf647a733e7cd3e37b89
-      internalID: -530656257
+      spriteID: 23d0859838deda44698aa75939efa1c0
+      internalID: -1326353644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_2
+      name: Skeleton Idle 1_2
       rect:
         serializedVersion: 2
         x: 48
@@ -185,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 615a93f332f9c074ba32c5af64d36b34
-      internalID: 448012236
+      spriteID: 859bab26ef1afb2478ef7f2a7b982755
+      internalID: 1781287810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_3
+      name: Skeleton Idle 1_3
       rect:
         serializedVersion: 2
         x: 72
@@ -206,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4d4f6cd16c8ebe4488a5bc55b165054
-      internalID: 626085836
+      spriteID: 78c9b87e3b36d3b4f9f5ebe2d70f74d6
+      internalID: -170844010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_4
+      name: Skeleton Idle 1_4
       rect:
         serializedVersion: 2
         x: 96
@@ -227,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85661f041019ad84d811a51b2f524fb8
-      internalID: -1476879110
+      spriteID: 4041f701319859542a6da0abc9260912
+      internalID: 482763545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_5
+      name: Skeleton Idle 1_5
       rect:
         serializedVersion: 2
         x: 120
@@ -248,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a27ba22a2bcaef04d9e9960ec74bc106
-      internalID: 1118314133
+      spriteID: adfe2d84975ad6d44b6b8b5229493127
+      internalID: -1130717043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_6
+      name: Skeleton Idle 1_6
       rect:
         serializedVersion: 2
         x: 144
@@ -269,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60849a4ca7f3795478749a1e3b25defc
-      internalID: -1154428428
+      spriteID: 6ff08949e260362449e787b24f9e0cc5
+      internalID: 625334592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_7
+      name: Skeleton Idle 1_7
       rect:
         serializedVersion: 2
         x: 168
@@ -290,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6097a7e30da4d9c4a9ccd8c4e8658cd7
-      internalID: -1053383582
+      spriteID: eeeef6a2d82a10e4fb2c37a564918f63
+      internalID: -264877274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_8
+      name: Skeleton Idle 1_8
       rect:
         serializedVersion: 2
         x: 192
@@ -311,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67d2d59fb3626e43bc9a89679596840
-      internalID: -1100961218
+      spriteID: f2382bcbb03e43045baa0d2c2323865e
+      internalID: -209492757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_9
+      name: Skeleton Idle 1_9
       rect:
         serializedVersion: 2
         x: 216
@@ -332,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c198bd59dbe114587d00c01fb96f02
-      internalID: 2102144207
+      spriteID: 4ec830d7bbca6134e8a8654d57bb1bd9
+      internalID: -731252868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton Idle_10
+      name: Skeleton Idle 1_10
       rect:
         serializedVersion: 2
         x: 240
@@ -353,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2eb0afa9177d38449a45222134ce309
-      internalID: 1113622163
+      spriteID: 01c0fa6c535a9d642981775d55c672d8
+      internalID: 1213686210
       vertices: []
       indices: 
       edges: []
@@ -370,17 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skeleton Idle_0: -85727878
-      Skeleton Idle_1: -530656257
-      Skeleton Idle_10: 1113622163
-      Skeleton Idle_2: 448012236
-      Skeleton Idle_3: 626085836
-      Skeleton Idle_4: -1476879110
-      Skeleton Idle_5: 1118314133
-      Skeleton Idle_6: -1154428428
-      Skeleton Idle_7: -1053383582
-      Skeleton Idle_8: -1100961218
-      Skeleton Idle_9: 2102144207
+      Skeleton Idle 1_0: 1741634140
+      Skeleton Idle 1_1: -1326353644
+      Skeleton Idle 1_10: 1213686210
+      Skeleton Idle 1_2: 1781287810
+      Skeleton Idle 1_3: -170844010
+      Skeleton Idle 1_4: 482763545
+      Skeleton Idle 1_5: -1130717043
+      Skeleton Idle 1_6: 625334592
+      Skeleton Idle 1_7: -264877274
+      Skeleton Idle 1_8: -209492757
+      Skeleton Idle 1_9: -731252868
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
