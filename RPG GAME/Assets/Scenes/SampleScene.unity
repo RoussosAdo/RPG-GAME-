@@ -2065,7 +2065,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1168668917}
   groundCheckDistance: 0.15
   wallCheck: {fileID: 816986167}
-  wallCheckDistance: 0.05
+  wallCheckDistance: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -2480,6 +2480,7 @@ GameObject:
   - component: {fileID: 1366707917}
   - component: {fileID: 1366707916}
   - component: {fileID: 1366707915}
+  - component: {fileID: 1366707918}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -2527,6 +2528,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366707918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366707914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9880a443b2411a4d986070752e0b4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  clonePrefab: {fileID: 8054505727234978581, guid: 5b31739aa3110a145890850be406c5be, type: 3}
+  cloneDuration: 1.5
 --- !u!1 &1919018964
 GameObject:
   m_ObjectHideFlags: 0

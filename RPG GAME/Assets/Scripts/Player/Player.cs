@@ -22,6 +22,7 @@ public class Player : Entity
     public float dashDir {get; private set;}
 
 
+    public SkillManager skill {get; private set;}
 
 
     #region States
@@ -66,6 +67,9 @@ public class Player : Entity
     protected override void Update()
     {
         base.Update();
+
+        skill = SkillManager.instance;
+
         stateMachine.currentState.Update();
 
         CheckForDashInput();
