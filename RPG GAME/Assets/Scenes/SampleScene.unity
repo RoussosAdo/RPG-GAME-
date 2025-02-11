@@ -2094,6 +2094,7 @@ Transform:
   - {fileID: 1168668917}
   - {fileID: 816986167}
   - {fileID: 325313543}
+  - {fileID: 1706407904}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2559,8 +2560,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   swordPrefab: {fileID: 385104335420868257, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
-  launchDir: {x: 5, y: 15}
+  launchForce: {x: 15, y: 20}
   swordGravity: 4
+  numberOfDots: 20
+  spaceBeetwenDots: 0.07
+  dotPrefab: {fileID: 7315113995400200495, guid: c447a0358061866409830acec15f7de4, type: 3}
+  dotsParent: {fileID: 1706407904}
+--- !u!1 &1706407903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706407904}
+  m_Layer: 6
+  m_Name: AimDotParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706407904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706407903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1062402033}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919018964
 GameObject:
   m_ObjectHideFlags: 0
