@@ -2078,6 +2078,7 @@ MonoBehaviour:
   jumpForce: 12
   dashSpeed: 25
   dashDuration: 0.2
+  sword: {fileID: 0}
 --- !u!4 &1062402033
 Transform:
   m_ObjectHideFlags: 0
@@ -2560,8 +2561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   swordPrefab: {fileID: 385104335420868257, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
-  launchForce: {x: 15, y: 20}
-  swordGravity: 4
+  launchForce: {x: 35, y: 25}
+  swordGravity: 4.5
   numberOfDots: 20
   spaceBeetwenDots: 0.07
   dotPrefab: {fileID: 7315113995400200495, guid: c447a0358061866409830acec15f7de4, type: 3}
@@ -3383,19 +3384,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9997649
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.02168328
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3407,7 +3408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3096073811317435351, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 2.485
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b2d90d77bcf2a4d8e06dc43cb5849b, type: 3}
