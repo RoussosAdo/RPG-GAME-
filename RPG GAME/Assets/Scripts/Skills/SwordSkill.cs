@@ -1,9 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+
+public enum SwordType
+{
+    Regular,
+    Bounce,
+    Pierce,
+    Spin
+}
 
 public class SwordSkill : Skill
 {
+    public SwordType swordType = SwordType.Regular;
+
+    [Header("Bounce Indo")]
+    [SerializeField] private int bounceAmount;
+    [SerializeField] private float bounceGravity;
+
+    [Header("Peirce Info")]
+    [SerializeField] private int pierceAmount;
+    [SerializeField] private float pierceGravity;
+
+
+
+
     [Header("Skill Info")]
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Vector2 launchForce;
@@ -26,6 +46,16 @@ public class SwordSkill : Skill
         base.Start();
 
         GenerateDots();
+
+        SetUpGravity();
+    }
+
+    private void SetUpGravity()
+    {
+        if (swordType == SwordType.Bounce)
+            swordGravity = bounceGravity;
+        else if (swordType == SwordType.Pierce)
+            swordGravity = pierceGravity;
     }
 
     protected override void Update()
@@ -50,6 +80,20 @@ public class SwordSkill : Skill
         GameObject newSword = Instantiate(swordPrefab, player.transform.position, transform.rotation);
         SwordSkillController newSwordScript = newSword.GetComponent<SwordSkillController>();
 
+
+        if (swordType == SwordType.Bounce)
+        {
+            newSwordScript.SetUpBounce(true, bounceAmount);
+        }
+        else if (swordType == SwordType.Pierce)
+        {
+            newSwordScript.SetUpPierce(pierceAmount);
+        }
+        
+
+        
+
+
         newSwordScript.SetupSword(finalDir, swordGravity, player);
 
 
@@ -58,6 +102,8 @@ public class SwordSkill : Skill
         DotsActive(false);
     }
 
+
+    #region Aim Region
     public Vector2 AimDirection()
     {
         Vector2 playerPosition = player.transform.position;
@@ -94,4 +140,5 @@ public class SwordSkill : Skill
 
         return position;
     }
+    #endregion
 }
