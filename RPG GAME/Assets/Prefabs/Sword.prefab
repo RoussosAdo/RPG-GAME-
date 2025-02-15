@@ -85,7 +85,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnSpeed: 12
-  pierceAmount: 0
   bounceSpeed: 20
 --- !u!1 &2424958170693970841
 GameObject:
