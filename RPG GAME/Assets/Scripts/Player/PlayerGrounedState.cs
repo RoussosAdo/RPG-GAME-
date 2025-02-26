@@ -22,6 +22,9 @@ public class PlayerGrounedState : PlayerState
     {
         base.Update();
 
+        if(Input.GetKeyDown(KeyCode.R))
+            stateMachine.ChangeState(player.blackHole);
+
         if(Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword())
             stateMachine.ChangeState(player.aimSword);
 
