@@ -55,7 +55,7 @@ public class PlayerBlackholeState : PlayerState
             }
         }
 
-        // We are exiting the state in BlackholeSkillController when all of the attacks are finished!
-        
+        if (player.skill.blackhole.SkillCompleted())
+            stateMachine.ChangeState(player.airState);
     }
 }
