@@ -3047,7 +3047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  swordType: 2
+  swordType: 0
   bounceAmount: 4
   bounceGravity: 1
   bounceSpeed: 20
