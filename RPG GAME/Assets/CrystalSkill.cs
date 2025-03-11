@@ -16,9 +16,20 @@ public class CrystalSkill : Skill
     [SerializeField] private bool canMoveToEnemy;
     [SerializeField] private float moveSpeed;
 
+    [Header("Multi Stacking Crystal")]
+    [SerializeField] private bool canUseMultiStacks;
+    [SerializeField] private int amountOfStacks;
+    [SerializeField] private float multiStackCooldown;
+    [SerializeField] private float useTimeWindow;
+    [SerializeField] private List<GameObject> crystalLeft = new List <GameObject>();
+
     public override void UseSkill()
     {
         base.UseSkill();
+
+        if(canUseMultiCrystal())
+            return;
+        
 
         if(currentCrystal == null)
         {
@@ -40,5 +51,56 @@ public class CrystalSkill : Skill
             currentCrystal.transform.position = playerPos;
             currentCrystal.GetComponent<CrystalSkillController>()?.FinishCrystal();
         }
+    }
+
+    private bool canUseMultiCrystal()
+    {
+        if(canUseMultiStacks)
+        {
+            if (crystalLeft.Count > 0)
+            {
+                if(crystalLeft.Count == amountOfStacks)
+                    Invoke("ResetAbility", useTimeWindow);
+
+                cooldown = 0;
+                GameObject crystalToSpawn = crystalLeft[crystalLeft.Count - 1];
+                GameObject newCrystal = Instantiate(crystalToSpawn, player.transform.position, Quaternion.identity);
+
+                crystalLeft.Remove(crystalToSpawn);
+
+                newCrystal.GetComponent<CrystalSkillController>().
+                    SetupCrystal(crystalDuration, canExplode, canMoveToEnemy, moveSpeed, FindClosestEnemy(newCrystal.transform));
+
+                if(crystalLeft.Count <= 0)
+                {
+                    cooldown = multiStackCooldown;
+                    RefillCrystal();
+                }
+
+            return true;
+
+            }
+        }
+
+        return false;
+    }
+
+    private void RefillCrystal()
+    {
+        int amountToAdd = amountOfStacks - crystalLeft.Count;
+
+        for (int i = 0; i < amountToAdd; i++)
+        {
+            crystalLeft.Add(crystalPrefab);
+        }
+    }
+
+    private void ResetAbility()
+    {
+        if(cooldownTimer > 0)
+            return;
+        
+        cooldownTimer = multiStackCooldown;
+        RefillCrystal();
     }
 }
