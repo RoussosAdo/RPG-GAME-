@@ -2163,8 +2163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db00a7985178c4fa6bc7f573836694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  maxHealth: 100
+  damage:
+    baseValue: 7
+    modifiers: 
+  maxHealth:
+    baseValue: 0
+    modifiers: 
   currentHealth: 0
 --- !u!1 &1168668916
 GameObject:
@@ -3396,8 +3400,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db00a7985178c4fa6bc7f573836694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  maxHealth: 100
+  damage:
+    baseValue: 10
+    modifiers: 
+  maxHealth:
+    baseValue: 100
+    modifiers: 
   currentHealth: 0
 --- !u!1 &2145946361
 GameObject:
