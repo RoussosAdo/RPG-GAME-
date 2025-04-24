@@ -4751,8 +4751,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242873792f93b82418df1c21747a8669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashDuration: 0.15
+  flashDuration: 0.2
   hitMat: {fileID: 2100000, guid: ad39635984aa4314bbdc0165417546a4, type: 2}
+  igniteColor:
+  - {r: 1, g: 0.4009434, b: 0.4009434, a: 1}
+  - {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
+  chillColor:
+  - {r: 0.3537736, g: 0.74125946, b: 1, a: 1}
+  - {r: 0.3529412, g: 0.7411765, b: 1, a: 1}
+  shockColor:
+  - {r: 1, g: 0.9098039, b: 0.3647059, a: 1}
+  - {r: 1, g: 0.9372549, b: 0.5882353, a: 1}
 --- !u!114 &1062402037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4799,10 +4808,10 @@ MonoBehaviour:
     baseValue: 1
     modifiers: 
   fireDamage:
-    baseValue: 12
+    baseValue: 0
     modifiers: 
   iceDamage:
-    baseValue: 4
+    baseValue: 1
     modifiers: 
   lightingDamage:
     baseValue: 0
@@ -4810,6 +4819,7 @@ MonoBehaviour:
   isIgnited: 0
   isChilled: 0
   isShocked: 0
+  ailmentsDuration: 4
   currentHealth: 0
 --- !u!1 &1071107381
 GameObject:
@@ -6473,6 +6483,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.2
   hitMat: {fileID: 2100000, guid: ad39635984aa4314bbdc0165417546a4, type: 2}
+  igniteColor:
+  - {r: 1, g: 0.4009434, b: 0.4009434, a: 1}
+  - {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
+  chillColor:
+  - {r: 0.3537736, g: 0.74125946, b: 1, a: 1}
+  - {r: 0.3529412, g: 0.7411765, b: 1, a: 1}
+  shockColor:
+  - {r: 1, g: 0.9098039, b: 0.3647059, a: 1}
+  - {r: 1, g: 0.9372549, b: 0.5882353, a: 1}
 --- !u!114 &2117509037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,17 +6538,18 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   fireDamage:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   iceDamage:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   lightingDamage:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   isIgnited: 0
   isChilled: 0
   isShocked: 0
+  ailmentsDuration: 4
   currentHealth: 0
 --- !u!70 &2117509038
 CapsuleCollider2D:
