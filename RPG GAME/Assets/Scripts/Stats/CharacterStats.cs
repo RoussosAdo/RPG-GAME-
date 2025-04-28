@@ -49,6 +49,7 @@ public class CharacterStats : MonoBehaviour
 
 
     public System.Action onHealthChanged;
+    protected bool isDead;
 
 
     protected virtual void Start()
@@ -57,45 +58,31 @@ public class CharacterStats : MonoBehaviour
       currentHealth = GetMaxHealthValue();
 
       fx = GetComponent<EntityFX>();
-
-      Debug.Log("character stats called");
     }
 
     protected virtual void Update()
-    {
-      ignitedTimer -= Time.deltaTime;
-      chilledTimer -= Time.deltaTime;
-      shockedTimer -= Time.deltaTime;
-      
-      igniteDamageTimer -= Time.deltaTime;
+  {
+    ignitedTimer -= Time.deltaTime;
+    chilledTimer -= Time.deltaTime;
+    shockedTimer -= Time.deltaTime;
 
-      if(ignitedTimer < 0)
-        isIgnited = false;
+    igniteDamageTimer -= Time.deltaTime;
 
-      if (chilledTimer < 0)
-        isChilled = false;
+    if (ignitedTimer < 0)
+      isIgnited = false;
 
-      if (shockedTimer < 0)
-        isShocked = false;
+    if (chilledTimer < 0)
+      isChilled = false;
 
-      if(igniteDamageTimer < 0 && isIgnited)
-      {
-        Debug.Log("Take burn damage " + igniteDamage);
+    if (shockedTimer < 0)
+      isShocked = false;
 
-        DecreaseHealthBy(igniteDamage);
-
-        if(currentHealth < 0)
-          Die();
-
-        igniteDamageTimer = igniteDamageCooldown;
-      }
-    }
+    if(isIgnited)
+      ApplyIgniteDamage();
+  }
 
 
-
-
-
-    public virtual void DoDamage(CharacterStats _targetStats)
+  public virtual void DoDamage(CharacterStats _targetStats)
   {
     if (TargetCanAvoidAttack(_targetStats))
       return;
@@ -108,9 +95,14 @@ public class CharacterStats : MonoBehaviour
     }
 
     totalDamage = CheckTargetArmor(_targetStats, totalDamage);
-    //_targetStats.TakeDamage(totalDamage);
-    DoMagicalDamage(_targetStats);
+    _targetStats.TakeDamage(totalDamage);
+
+
+    //If inventory current weapon had fire effect then
+    //DoMagicalDamage(_targetStats);
   }
+
+  #region Magical damame and ailments
 
   public virtual void DoMagicalDamage(CharacterStats _targetStats)
   {
@@ -128,6 +120,12 @@ public class CharacterStats : MonoBehaviour
     if (Mathf.Max(_fireDamage, _iceDamage, _lightingDamage) <= 0)
       return;
 
+    AttemptToApplyAilments(_targetStats, _fireDamage, _iceDamage, _lightingDamage);
+    
+  }
+
+  private void AttemptToApplyAilments(CharacterStats _targetStats, int _fireDamage, int _iceDamage, int _lightingDamage)
+  {
     bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage;
     bool canApplyChill = _iceDamage > _fireDamage && _iceDamage > _lightingDamage;
     bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage;
@@ -138,7 +136,7 @@ public class CharacterStats : MonoBehaviour
       {
         canApplyIgnite = true;
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-        Debug.Log("Apply fire");
+        
         return;
       }
 
@@ -146,7 +144,7 @@ public class CharacterStats : MonoBehaviour
       {
         canApplyChill = true;
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-        Debug.Log("Apply ice");
+        
         return;
       }
 
@@ -154,26 +152,19 @@ public class CharacterStats : MonoBehaviour
       {
         canApplyShock = true;
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-        Debug.Log("Apply light");
+        
         return;
       }
     }
 
-    if(canApplyIgnite)
+    if (canApplyIgnite)
       _targetStats.SetUpIgniteDamage(Mathf.RoundToInt(_fireDamage * .2f));
 
-    if(canApplyShock)
+    if (canApplyShock)
       _targetStats.SetUpThunderStrikeDamage(Mathf.RoundToInt(_lightingDamage * .1f));
 
     _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-
-  }
-
-  private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
-  {
-    totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelligence.GetValue() * 3);
-    totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);
-    return totalMagicalDamage;
+    return;
   }
 
   public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
@@ -261,17 +252,32 @@ public class CharacterStats : MonoBehaviour
     }
   }
 
+  private void ApplyIgniteDamage()
+  {
+    if (igniteDamageTimer < 0)
+    {
+      DecreaseHealthBy(igniteDamage);
+
+      if (currentHealth < 0 && !isDead)
+        Die();
+
+      igniteDamageTimer = igniteDamageCooldown;
+    }
+  }
+
   public void SetUpIgniteDamage(int _damage) => igniteDamage = _damage;
   public void SetUpThunderStrikeDamage(int _damage) => shockDamage = _damage;
   
+  #endregion
 
   public virtual void TakeDamage(int _damage)
     {
         DecreaseHealthBy(_damage);
 
-        Debug.Log(_damage);
+        GetComponent<Entity>().DamageImpact();
+        fx.StartCoroutine("FlashFX");
 
-        if (currentHealth < 0)
+        if (currentHealth < 0 && !isDead)
             Die();
 
         
@@ -287,8 +293,10 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void Die()
     {
-        //throw new NotImplementedException();
+      isDead = true;
     }
+
+  #region Stat Calculations
 
   private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
   {
@@ -302,7 +310,14 @@ public class CharacterStats : MonoBehaviour
     return totalDamage;
   }
 
-   private bool TargetCanAvoidAttack(CharacterStats _targetStats)
+  private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
+  {
+    totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelligence.GetValue() * 3);
+    totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);
+    return totalMagicalDamage;
+  }
+
+  private bool TargetCanAvoidAttack(CharacterStats _targetStats)
   {
     int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
 
@@ -341,4 +356,5 @@ public class CharacterStats : MonoBehaviour
   {
     return maxHealth.GetValue() + vitality.GetValue() * 5;;
   }
+  #endregion
 }
