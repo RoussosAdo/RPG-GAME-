@@ -4397,6 +4397,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ac4c9e4b6ead1d4c9bdaf1655dedda9, type: 2}
   - {fileID: 11400000, guid: 50c1d6d0a73b8d145b94f05bec089288, type: 2}
   - {fileID: 11400000, guid: d8419908fd83fe74681e15d3e8688883, type: 2}
+  - {fileID: 11400000, guid: 5cf43f5ae111f46429634200eb6d9f61, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -5200,7 +5201,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 1082023372826771063, guid: adf3698d651a680428ad5b7566472eb1, type: 3}
   currentHealth: 0
-  level: 7
+  level: 1
   percantageModifier: 0.4
 --- !u!114 &467701272
 MonoBehaviour:
@@ -7782,13 +7783,13 @@ MonoBehaviour:
     baseValue: 1
     modifiers: 
   fireDamage:
-    baseValue: 0
+    baseValue: 1
     modifiers: 
   iceDamage:
     baseValue: 0
     modifiers: 
   lightingDamage:
-    baseValue: 20
+    baseValue: 5
     modifiers: 
   isIgnited: 0
   isChilled: 0
