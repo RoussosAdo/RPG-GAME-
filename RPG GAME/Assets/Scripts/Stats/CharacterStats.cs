@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
@@ -81,6 +82,21 @@ public class CharacterStats : MonoBehaviour
       ApplyIgniteDamage();
   }
 
+  public virtual void IncreaseStatBy(int _modifier, float _duration, Stat _statToModify)
+  {
+    //coor
+    StartCoroutine(StatModCoroutine(_modifier, _duration, _statToModify));
+  }
+
+  private IEnumerator StatModCoroutine(int _modifier, float _duration, Stat _statToModify)
+  {
+    _statToModify.AddModifier(_modifier);
+
+    yield return new WaitForSeconds(_duration);
+
+    _statToModify.RemoveModifier(_modifier);
+  }
+
 
   public virtual void DoDamage(CharacterStats _targetStats)
   {
@@ -98,8 +114,7 @@ public class CharacterStats : MonoBehaviour
     _targetStats.TakeDamage(totalDamage);
 
 
-    //If inventory current weapon had fire effect then
-    //DoMagicalDamage(_targetStats);
+    DoMagicalDamage(_targetStats); // i CAN REMOVE IT IF I DONT WANT TO APPLY MAGICAL HIT ON PRIMARY ATTACK
   }
 
   #region Magical damame and ailments

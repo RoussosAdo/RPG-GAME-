@@ -4398,10 +4398,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50c1d6d0a73b8d145b94f05bec089288, type: 2}
   - {fileID: 11400000, guid: d8419908fd83fe74681e15d3e8688883, type: 2}
   - {fileID: 11400000, guid: 5cf43f5ae111f46429634200eb6d9f61, type: 2}
-  - {fileID: 11400000, guid: d1dc5733d592c804d9147937dbaa8cdf, type: 2}
   - {fileID: 11400000, guid: 2486267406c2b9145849766101a1585d, type: 2}
   - {fileID: 11400000, guid: 7c053e87340870a4a869ff043aafa8df, type: 2}
   - {fileID: 11400000, guid: 9c7c8bb11ca188a43ad5a947522822df, type: 2}
+  - {fileID: 11400000, guid: d1dc5733d592c804d9147937dbaa8cdf, type: 2}
+  - {fileID: 11400000, guid: b4e85100baf647b45891e7bbdd8b1a2f, type: 2}
+  - {fileID: 11400000, guid: 6809f08a7bdea724bafe208fed762b93, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -5205,7 +5207,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 1082023372826771063, guid: adf3698d651a680428ad5b7566472eb1, type: 3}
   currentHealth: 0
-  level: 1
+  level: 5
   percantageModifier: 0.4
 --- !u!114 &467701272
 MonoBehaviour:
@@ -8499,7 +8501,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 1082023372826771063, guid: adf3698d651a680428ad5b7566472eb1, type: 3}
   currentHealth: 0
-  level: 1
+  level: 4
   percantageModifier: 0.4
 --- !u!114 &1116010737
 MonoBehaviour:
@@ -12532,7 +12534,7 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 1082023372826771063, guid: adf3698d651a680428ad5b7566472eb1, type: 3}
   currentHealth: 0
-  level: 1
+  level: 3
   percantageModifier: 0.4
 --- !u!70 &2117509038
 CapsuleCollider2D:
