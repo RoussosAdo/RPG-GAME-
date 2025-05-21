@@ -37,14 +37,39 @@ public class AudioManager : MonoBehaviour
         if (sfx[_sfxIndex].isPlaying)
             return;
 
+        
+
         if (_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinimumDistance)
-            return;
+                return;
 
         if (_sfxIndex < sfx.Length)
             {
                 sfx[_sfxIndex].pitch = Random.Range(.85f, 1.1f);
                 sfx[_sfxIndex].Play();
             }
+    }
+
+
+    public void StopSFXWithTime(int _index) => StartCoroutine(DecreaseVolume(sfx[_index]));
+    
+
+    private IEnumerator DecreaseVolume(AudioSource _audio)
+    {
+        float defaultVolume = _audio.volume;
+
+        while (_audio.volume > .1f)
+        {
+            _audio.volume -= _audio.volume * .2f;
+            yield return new WaitForSeconds(.6f);
+
+            if (_audio.volume <= .1f)
+            {
+                _audio.Stop();
+                _audio.volume = defaultVolume;
+                break;
+            }
+        }
+
     }
 
     public void StopSFX(int _index) => sfx[_index].Stop();
