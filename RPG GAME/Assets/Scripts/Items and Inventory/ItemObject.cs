@@ -30,6 +30,7 @@ public class ItemObject : MonoBehaviour
 
     public void PickUpItem()
     {
+        AudioManager.instance.PlaySFX(9, transform);
         Inventory.instance.AddItem(itemData);
         Destroy(gameObject);
     }

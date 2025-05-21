@@ -24,11 +24,16 @@ public class BlackholeSkill : Skill
     {
         base.UseSkill();
 
-        GameObject newBlackHole = Instantiate(blackHolePrefab, player.transform.position,Quaternion.identity);
+
+
+        GameObject newBlackHole = Instantiate(blackHolePrefab, player.transform.position, Quaternion.identity);
 
         currentBlackhole = newBlackHole.GetComponent<BlackholeSkillController>();
 
-        currentBlackhole.SetupBlackhole(maxSize, growSpeed, shrinkSpeed, amountOfAttacks, cloneCooldown,blackholeDuration);
+        currentBlackhole.SetupBlackhole(maxSize, growSpeed, shrinkSpeed, amountOfAttacks, cloneCooldown, blackholeDuration);
+
+        AudioManager.instance.PlaySFX(18, player.transform);
+        AudioManager.instance.PlaySFX(19, player.transform);
     }
 
     protected override void Start()
