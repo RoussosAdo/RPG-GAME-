@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    [SerializeField] private float sfxMinimumDistance;
     [SerializeField] private AudioSource[] sfx;
     [SerializeField] private AudioSource[] bgm;
 
@@ -30,13 +32,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(int _sfxIndex)
+    public void PlaySFX(int _sfxIndex, Transform _source)
     {
+        if (sfx[_sfxIndex].isPlaying)
+            return;
+
+        if (_source != null && Vector2.Distance(PlayerManager.instance.player.transform.position, _source.position) > sfxMinimumDistance)
+            return;
+
         if (_sfxIndex < sfx.Length)
-        {
-            sfx[_sfxIndex].pitch = Random.Range(.85f, 1.1f);
-            sfx[_sfxIndex].Play();
-        }
+            {
+                sfx[_sfxIndex].pitch = Random.Range(.85f, 1.1f);
+                sfx[_sfxIndex].Play();
+            }
     }
 
     public void StopSFX(int _index) => sfx[_index].Stop();
