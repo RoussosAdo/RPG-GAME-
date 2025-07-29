@@ -13,7 +13,7 @@ Created as a solo project with custom gameplay mechanics, state machines, and vi
 
 ## 🖼️ Screenshots
 
-> If the images below don’t load, [see them on Itch.io here](https://ohestisgames.itch.io/blades-of-ashenfire)
+> If the images below don’t load, [see them on Itch.io here](https://ohestisgames.itch.io/blades-of-ashenfire-demo)
 
 ![Gameplay](https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE0Ni5wbmc=/original/z4wq%2FQ.png)
 ![Combat](https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE0NS5wbmc=/original/08Vii8.png)
@@ -45,7 +45,7 @@ Created as a solo project with custom gameplay mechanics, state machines, and vi
 
 ## 🎮 Play It
 
-👉 [Play Blades of Ashenfire on Itch.io](https://ohestisgames.itch.io/blades-of-ashenfire)
+👉 [Play Blades of Ashenfire on Itch.io](https://ohestisgames.itch.io/blades-of-ashenfire-demo)
 
 ---
 
