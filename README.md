@@ -15,7 +15,7 @@
 - Visual Studio
 
 ## Screenshots
-![Gameplay Screenshot] (https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE0Ni5wbmc=/)
+![Gameplay Screenshot] (https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE1Mi5wbmc=/347x500/MkLX81.png)
 ![Gameplay Screenshot] ()
 
 
