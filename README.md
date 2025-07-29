@@ -15,7 +15,7 @@
 - Visual Studio
 
 ## Screenshots
-![Gameplay Screenshot] (https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE0Ni5wbmc=/original/z4wq%2FQ.png)
+![Gameplay Screenshot] (https://img.itch.zone/aW1hZ2UvMzY3MDA0Ni8yMTgzOTE0Ni5wbmc=/)
 ![Gameplay Screenshot] ()
 
 
